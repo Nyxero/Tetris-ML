@@ -162,6 +162,38 @@ namespace Tetris_ML
                 }
             }
         }
+        private void MoveLeft()
+        {
+            // TODO: Move all Parts of a block to the left side (blocks will be deformed). 
+            for (int i = Rows - 1; i >= 0; i--)
+            {
+                for (int j = 0; j < Columns; j++)
+                {
+                    if (CurrentBlock[j, i] == 1 && j-1 >= 0 && CurrentBlock[j-1, i] != 1)
+                    {
+                        CurrentBlock[j, i] = 0;
+                        CurrentBlock[j-1, i] = 1;
+                    }
+
+                }
+            }
+        }
+        private void MoveRight()
+        {
+            // TODO: Move all Parts of a block to the right side (blocks will be deformed). 
+            for (int i = Rows - 1; i >= 0; i--)
+            {
+                for (int j = Columns-1; j >= 0; j--)
+                {
+                    if (CurrentBlock[j, i] == 1 && j + 1 <= Columns-1 && CurrentBlock[j + 1, i] != 1)
+                    {
+                        CurrentBlock[j, i] = 0;
+                        CurrentBlock[j + 1, i] = 1;
+                    }
+
+                }
+            }
+        }
         private void Draw()
         {
             for (int i = 0; i < Rows; i++)
@@ -194,13 +226,13 @@ namespace Tetris_ML
             {
                 Console.Clear();
                 Draw();
-                MoveDown();
 
                 if (IsBlockOnGround)
                 {
                     SetBlock();
                     CurrentBlock = SpawnBlock(GetBlockType());
                 }
+                MoveDown();
                 Thread.Sleep(250);
             }
             Console.WriteLine("GameOver!");

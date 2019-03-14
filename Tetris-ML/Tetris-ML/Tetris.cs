@@ -207,7 +207,7 @@ namespace Tetris_ML
                 }
                 Console.WriteLine();
             }
-        }
+        } 
         private void SetBlock()
         {
             for (int i = 0; i < Rows; i++)

@@ -12,7 +12,7 @@ namespace Tetris_ML
         private static int Rows { get; set; }
         private short[,] PlayGround { get; set; } 
         private short[,] CurrentBlock { get; set; }
-        public int Score { get; private set; }
+        public int Score { get; private set; } 
 
         public Tetris(int columns, int rows)
         {

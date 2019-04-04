@@ -263,7 +263,7 @@ namespace Tetris_ML
             {
                 Console.Clear();
                 Draw();
-
+                
                 if (IsBlockOnGround)
                 {
                     SetBlock();

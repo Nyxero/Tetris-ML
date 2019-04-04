@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-
-namespace Tetris_ML
+﻿namespace Tetris_ML
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Tetris tetris = new Tetris(10, 18);
             tetris.Start();
